@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="music"><img src="logo1.png" alt="Music Player">Music Player</li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="Songlist"><h1>Welcome to the Music Player</h1>
+        <div class="SongitemContainer">
+            <div class="Songitem">
+            <img src="s1.jpg" alt="1" >
+            <span class="songName">lo-maan-liya</span>
+            <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s2.jpg" alt="1" >
+                <span class="songName">Maan meri jaan</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s3.jpg" alt="1" >
+                <span class="songName">Pyaar krte ho na</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s4.jpg" alt="1" >
+                <span class="songName">Baarish main tum</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s5.jpg" alt="1" >
+                <span class="songName">Kesariya</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s6.jpg" alt="1" >
+                <span class="songName">Dil de diya hai</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s7.jpg" alt="1" >
+                <span class="songName">Dil galti kar</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+            <div class="Songitem">
+                <img src="s8.jpg" alt="1" >
+                <span class="songName">Manike</span>
+                <span class="songplay"><span class="time">5:20<i class="far songItemPlay fa-play-circle"></i></span></span>  
+            </div>
+        </div>
+    </div>
+        
+    </div>
+        <div class="songbanner"></div>
+    </div>
+
+    <div class="bottom">
+        <input type="range" name="range" id="progressbar" min="0" value="0" max="100">
+        <div class="icons">
+            <!--fontawesome icons-->
+            <i class="fa-solid fa-backward-step fa-2x"></i>
+            <i class="fa-solid fa-play-circle fa-2x" id="masterplay"></i>
+            <i class="fa-solid fa-forward-step fa-2x"></i>
+        </div>  
+        <div class="songinfo">
+           <img src="music.gif.gif" width="50px"  alt="" id="gif">Welcome to the Music Player
+        </div>
+    </div>
+    <script src="script.js"></script> 
+    <script src="https://kit.fontawesome.com/26e12e44d3.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=League+Gothic&family=Rubik&family=Sansita+Swashed&family=Ubuntu:ital,wght@0,500;1,300&display=swap');
+
+body{
+    background-color: rgb(227, 242, 179);
+}
+
+nav{
+    font-family: 'Rubik', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+nav ul{
+    /* margin: 4px; */
+    /* padding: 2px; */
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 65px;
+    background-color: rgb(0, 0, 0);
+    color:white;
+}
+nav ul li{
+    padding: 0 10px;
+}
+.music img{
+    padding:0 5px;
+    margin:7px;
+    width: 50px;
+    border-radius: 1.5rem;
+}
+.music{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+.container{
+   min-height: 70vh;
+   font-family: 'Rubik', sans-serif;
+   background-color: rgb(127, 27, 221);
+   display:flex ;
+   color: aqua;
+   width:75%;
+   margin: 20px auto;
+   border-radius: 10px;
+   padding: 30px;
+   background-image: url('back.jpg');
+   background-size: contain;
+   background-size: cover;
+}
+#progressbar{
+    width: 85vw;
+    cursor: pointer;
+}
+.bottom{
+    position: sticky;
+    height: 80px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.icons{
+    margin-top: 15px;
+}
+.icons i{
+    cursor: pointer;
+}
+
+.Songitem{
+    display: flex;
+    height: 47px;
+    width: 70%;
+    color: black;
+    background-color: white;
+    margin: 14px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.Songitem img{
+    margin: 5px 15px;
+    width: 45px;
+    height:42px;
+    border-radius: 30px;
+}
+.SongitemContainer{
+    margin:40px 0;
+}
+/* .songplay{
+    margin: 10px ;
+} */
+.time{
+    margin: 0 10px;
+}
+.time i{
+    cursor: pointer;
+}
+.songinfo{
+    position: absolute;
+    left: 10vw;
+    font-family: 'Rubik', sans-serif;
+}
+/* #g{margin-top: 10px;
+
+} */
+
+.songinfo img{
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
