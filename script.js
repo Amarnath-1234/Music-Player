@@ -1,13 +1,13 @@
 console.log("Welcome to Music player");
 let songIndex = 0;
-let audioElement = new Audio('1.mp3');
+let audioElement = new Audio('songs/1.mp3');
 // audioElement.play
 // let masterplay = getElementById('masterplay');
 // let progressbar = getElementById('progressbar');
-let songItems = Array.from(document.getElementsByClassName('songitem'));
+let songItems = Array.from(document.getElementsByClassName('Songitem'));
 
 let songs =[
-    {songName:"lo-maan-liya", filePath:"1.mp3", coverPath:"s1.jpg"},
+    {songName:"lo-maan-liya", filePath:"songs/1.mp3", coverPath:"covers/s1.jpg"},
     {songName:"Maan meri jaan", filePath:"songs/2.mp3", coverPath:"covers/s2.jpg"},
     {songName:"Pyaar krte ho na", filePath:"songs/3.mp3", coverPath:"covers/s3.jpg"},
     {songName:"Baarish main tum", filePath:"songs/4.mp3", coverPath:"covers/s4.jpg"},
@@ -17,9 +17,9 @@ let songs =[
     {songName:"Manike", filePath:"songs/8.mp3", coverPath:"covers/s8.jpg"},
 ]
 
-songItems.forEach((element,i) => {
-    console.log(element,i);
-    element.getElementByTagName("img")[0].src = songs[i].coverPath;
+songItems.forEach((element, i)=>{
+    console.log(element, i);
+    element.querySelector("img")[0] = songs[i].coverPath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 });
 // audio element.play();
@@ -51,4 +51,24 @@ progressbar.value = progress;
 
 progressbar.addEventListener('change',()=>{
     audioElement.currentTime = progressbar.value*audioElement.duration/100;
+})
+
+const makeAllplays =()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.add('fa-play-circle');
+        element.classList.remove('fa-pause-circle');
+    })
+}
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click',(e)=>{
+        makeAllplays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        audioElement.src =`${songIndex+1}.mp3;`
+        audioElement.currentTime=0;
+        audioElement.play();
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+    })
 })
