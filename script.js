@@ -1,10 +1,12 @@
 console.log("Welcome to Music player");
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
-// audioElement.play
-// let masterplay = getElementById('masterplay');
-// let progressbar = getElementById('progressbar');
+let audioElement = new Audio;
+audioElement.play
+let masterplay = document.getElementById('masterplay');
+let progressbar = document.getElementById('progressbar');
+let gif = document.getElementById('gif');
 let songItems = Array.from(document.getElementsByClassName('Songitem'));
+let masterSongName = document.getElementById('masterSongName');
 
 let songs =[
     {songName:"lo-maan-liya", filePath:"songs/1.mp3", coverPath:"covers/s1.jpg"},
@@ -65,10 +67,48 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src =`${songIndex+1}.mp3;`
+        audioElement.src =`songs/${songIndex+1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime=0;
         audioElement.play();
+        gif.style.opacity=1;
         masterplay.classList.remove('fa-play-circle');
         masterplay.classList.add('fa-pause-circle');
     })
+})
+
+document.getElementById('next').addEventListener('click',()=>{
+    if(songIndex>=7)
+    {
+        songIndex = 0;
+    }
+    else
+    {
+        songIndex += 1;
+    }
+    audioElement.src =`songs/${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime=0;
+        audioElement.play();
+        gif.style.opacity=1;
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
+})
+
+document.getElementById('previous').addEventListener('click',()=>{
+    if(songIndex<=0)
+    {
+        songIndex = 0;
+    }
+    else
+    {
+        songIndex -= 1;
+    }
+    audioElement.src =`songs/${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime=0;
+        audioElement.play();
+        gif.style.opacity=1;
+        masterplay.classList.remove('fa-play-circle');
+        masterplay.classList.add('fa-pause-circle');
 })
